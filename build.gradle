@@ -32,4 +32,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
+}z
