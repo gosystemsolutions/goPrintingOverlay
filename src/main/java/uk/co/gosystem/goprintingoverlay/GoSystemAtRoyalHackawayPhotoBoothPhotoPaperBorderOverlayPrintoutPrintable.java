@@ -7,8 +7,6 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
@@ -16,20 +14,20 @@ import javax.imageio.ImageIO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class RoyalHackawayPhotoPaperOverlayPrintable implements Printable {
-    private static final Logger logger = LogManager.getLogger(RoyalHackawayPhotoPaperOverlayPrintable.class);
+public class GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable implements Printable {
+    private static final Logger logger = LogManager.getLogger(GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable.class);
     BufferedImage overlay;
     BufferedImage image;
 
     int dpi;
 
-    public RoyalHackawayPhotoPaperOverlayPrintable(URL overlay, File image, int dpi) throws IOException {
+    public GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable(URL overlay, File image, int dpi) throws IOException {
         this.overlay = ImageIO.read(overlay);
         this.image = ImageIO.read(image);
         this.dpi = dpi;
     }
 
-    public RoyalHackawayPhotoPaperOverlayPrintable(URL overlay, URL image, int dpi) throws IOException {
+    public GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable(URL overlay, URL image, int dpi) throws IOException {
         this.overlay = ImageIO.read(overlay);
         this.image = ImageIO.read(image);
         this.dpi = dpi;

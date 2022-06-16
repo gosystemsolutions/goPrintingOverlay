@@ -10,7 +10,6 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 public class Main {
@@ -18,8 +17,8 @@ public class Main {
 
     private static final int DOTS_PER_INCH = 600;
 
-    private static final URL overlay = RoyalHackawayPhotoPaperOverlayPrintable.class.getResource("/overlay.png");
-    private static final URL defaultImage = RoyalHackawayPhotoPaperOverlayPrintable.class.getResource("/shrey.jpg");
+    private static final URL overlay = Main.class.getResource("/overlay.png");
+    private static final URL defaultImage = Main.class.getResource("/shrey.jpg");
 
     public static void print(Printable page) throws PrinterException {
         // Get the set of attributes that we want from our printout
@@ -59,14 +58,14 @@ public class Main {
             logger.debug("Argument: {}", arg);
         }
 
-        RoyalHackawayPhotoPaperOverlayPrintable page;
+        GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable page;
 
         if (args.length > 0) {
             logger.info("Picture found - {}", args[0]);
-            page = new RoyalHackawayPhotoPaperOverlayPrintable(overlay, new File(args[0]), DOTS_PER_INCH);
+            page = new GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable(overlay, new File(args[0]), DOTS_PER_INCH);
         } else {
             logger.warn("An image argument was not passed - defaulting to a picture of Shrey.");
-            page = new RoyalHackawayPhotoPaperOverlayPrintable(overlay, defaultImage, DOTS_PER_INCH);
+            page = new GoSystemAtRoyalHackawayPhotoBoothPhotoPaperBorderOverlayPrintoutPrintable(overlay, defaultImage, DOTS_PER_INCH);
         }
 
         print(page);
